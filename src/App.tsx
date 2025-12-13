@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import {GlobalStyle} from './GlobalStyles'
@@ -15,11 +15,11 @@ const Rotas = () =>(
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <GlobalStyle />
         <Rotas/>
       <Footer/>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
