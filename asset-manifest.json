@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/e-food/static/js/main.dc48263d.js",
+    "main.js": "/e-food/static/js/main.82e25dba.js",
     "static/js/453.d9e409c1.chunk.js": "/e-food/static/js/453.d9e409c1.chunk.js",
     "static/media/camarao.png": "/e-food/static/media/camarao.37625fc3b2cbe4f52ffc.png",
     "static/media/imagem.png": "/e-food/static/media/imagem.4c4dda6dc34c6503a5c1.png",
     "static/media/pizza.png": "/e-food/static/media/pizza.28cab1f888178470a11c.png",
     "static/media/Vector.png": "/e-food/static/media/Vector.78fedf0151d5766e309f.png",
     "index.html": "/e-food/index.html",
-    "main.dc48263d.js.map": "/e-food/static/js/main.dc48263d.js.map",
+    "main.82e25dba.js.map": "/e-food/static/js/main.82e25dba.js.map",
     "453.d9e409c1.chunk.js.map": "/e-food/static/js/453.d9e409c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.dc48263d.js"
+    "static/js/main.82e25dba.js"
   ]
 }
