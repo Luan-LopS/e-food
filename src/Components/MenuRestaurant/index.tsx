@@ -12,7 +12,6 @@ interface Props {
     home: boolean
 }
 
-
 const MenuItem = ({ ...items }: Props) => (
     <Card home={false}>
         <CardImg image={items.image}/>
