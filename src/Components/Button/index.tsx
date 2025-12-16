@@ -1,13 +1,12 @@
 import { Btn } from "./styles"
 
 type Props = {
-    variant: 'home' | 'default' | 'addCarrinho'
-    onClick?: ()=>void
-    children?: React.ReactNode
+    action: string
+    type: boolean
 }
 
-const Button  = ({variant= 'default', onClick, children}:Props)=>(
-    <Btn type="button" variant={variant} onClick={onClick}>{children}</Btn>
+const Button  = ({action, type}:Props)=>(
+    <Btn type={type}>{action === 'home' ? 'Saiba mais' : 'Adicionar ao carrinho'}</Btn>
 )
 
 export default Button

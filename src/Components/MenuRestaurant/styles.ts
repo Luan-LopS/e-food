@@ -8,9 +8,3 @@ export const CardImg = styled.div<{image: string}>`
     height: 167px;
     margin: 8px;
 `
-
-export const Content = styled.div`
-    width: 100%;
-    height: 100%;
-    margin: 8px;
-`

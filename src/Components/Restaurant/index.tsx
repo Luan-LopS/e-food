@@ -1,43 +1,39 @@
 import { Link } from 'react-router-dom'
-import { Card, CardHeader, P, CardBody } from '../../GlobalStyles'
-import { CardImg } from './styles'
+import { Card, CardHeader, CardImg, P, CardBody } from './styles'
 import star from '../../Assets/image/star.png'
 import Button from '../Button'
+import { FoodItems } from '../../Models/Dados'
 import Tag from '../Tag'
 
-type Props = {
+export type Props = {
     id: number
     title: string
+    description: string
     image: string
-    descricao: string
     rating: number
+    link: string
     type: string
-    emphasis: boolean,
-    home?:boolean
+    emphasis: boolean
+    menu: FoodItems[]
+    home: boolean
 }
 
-const Restaurent = ({id, title, image, descricao, rating, home, emphasis, type}: Props) =>{
-    const description = (descricao: string)=>{
-        if (descricao.length > 272 ){
-            return descricao.slice(0, 250)+'...'
-        } 
-        return descricao
-    }
 
+const Restaurent = ({id, title, image, description, link, rating, home, emphasis, type}: Props) =>{
 
     return(
-        <Card $home>
+        <Card home={home}>
             <CardImg image={image} >
                 <Tag typeFood={type} emphasis={emphasis}/>
             </CardImg>
             <CardBody>
-                <CardHeader $home={true}>
+                <CardHeader home={true}>
                     <h3>{title} </h3>
                     <span>{rating} <img src={star} alt={star}/></span>
                 </CardHeader>
-                <P>{description(descricao)}</P>
-                <Link to={`/restaurant/${id}`}>
-                    <Button variant='home'>Saiba Mais</Button>
+                <P>{description}</P>
+                <Link to={`restaurent/${link}-${id}`}>
+                    <Button type={true} action='home'/>
                 </Link>
             </CardBody>
         </Card>

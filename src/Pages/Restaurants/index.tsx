@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom"
 import Header from "../../Components/Header"
 import ContainerMenu from "../../Container/MenuContainer"
-import { useRestaurents } from "../../Models/Dados"
+import { restaurents } from "../../Models/Dados"
 
 const Restaurents = () =>{
-    const { id } = useParams()
-    const { restaurants } = useRestaurents()
-    const restaurente = restaurants.find(r=>r.id=== Number(id))
+    const { linkRestaurents } = useParams()
+    const idLink = Number(linkRestaurents?.split('-').pop())
+    const restaurente = restaurents.find(r=>r.id=== idLink)
 
     return(
         <>
             {restaurente && (
-                <Header image={restaurente.capa} name={restaurente.titulo} type={restaurente.tipo}/>)}
+                <Header image={restaurente.image} name={restaurente.title} type={restaurente.type}/>)}
             <ContainerMenu />
         </>
     )
