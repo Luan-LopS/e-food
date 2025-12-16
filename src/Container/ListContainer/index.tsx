@@ -1,14 +1,16 @@
 import Restaurent from '../../Components/Restaurant'
 import { ContainerUl } from '../../GlobalStyles'
-import { restaurents } from '../../Models/Dados'
+import { useRestaurents } from '../../Models/Dados'
 
 
 const Container = () =>{
-
+    const { restaurants } = useRestaurents() 
     return(
       <ContainerUl home={true}>
-          {restaurents.map((item)=>(
-            <Restaurent key={item.id} home={true} {...item} / >))}
+          {restaurants.map((item)=>(
+            <Restaurent key={item.id} home descricao={item.descricao}  
+            emphasis={item.destacado} id={item.id} image={item.capa} title={item.titulo}
+            type={item.tipo} rating={item.avaliacao}  />))}
       </ContainerUl>
   )
 }

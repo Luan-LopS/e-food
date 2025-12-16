@@ -1,31 +1,39 @@
-import { Card, CardHeader, P, CardBody } from '../Restaurant/styles'
-import { CardImg } from './styles'
-import { Link } from 'react-router-dom'
-import Button from '../Button'
+import { Card, CardHeader, P, CardBody } from '../../GlobalStyles'
+import { CardImg} from './styles'
 
 interface Props {
     id: number
-    title: string
-    description: string
-    price: number
-    image: string
-    home: boolean
+    nome: string
+    descricao: string
+    preco: number
+    foto: string
+    porcao: string
+    home?:boolean
+    children?: React.ReactNode
+    menuDetails: boolean
 }
 
-const MenuItem = ({ ...items }: Props) => (
-    <Card home={false}>
-        <CardImg image={items.image}/>
-        <CardBody>
-            <CardHeader home={false}>
-                <h3>{items.title}</h3>
-            </CardHeader>
-            <P>{items.description}</P>
-            <Link to={`restaurent/carrinho`}>
-                    <Button type={false} action='menu'/>
-            </Link>
-        </CardBody>
-    
-    </Card>
-)
+const MenuItem = ({ descricao, ...items }: Props) => {
+
+    const description =(descricao:string)=>{
+        if (descricao.length > 170){
+            return descricao.slice(0, 170)+'...'
+        }
+        return descricao
+    }
+
+    return(
+        <Card $home={false}>
+                <CardImg image={items.foto}/>
+                <CardBody>
+                    <CardHeader $home={false}>
+                        <h3>{items.nome}</h3>
+                    </CardHeader>
+                    <P>{description(descricao)}</P>
+                    {items.children}                    
+                </CardBody>
+            </Card>
+    )
+}
 
 export default MenuItem
