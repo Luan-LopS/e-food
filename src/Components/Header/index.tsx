@@ -11,6 +11,7 @@ type Props = {
 const Header = ({name, type, image}: Props)=>{
     const location = useLocation()
     const home = location.pathname === '/'
+    const TypeFood = type? type[0].toUpperCase() + type.slice(1) : ''
 
     return(
     <>
@@ -31,7 +32,7 @@ const Header = ({name, type, image}: Props)=>{
         {!home &&  image &&
             <SubHeader image={image} >
                 <Content>
-                    <FoodType>{type}</FoodType>
+                    <FoodType>{TypeFood}</FoodType>
                     <Title>{name}</Title>
                 </Content>
                 

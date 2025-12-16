@@ -5,7 +5,9 @@ type Props ={
     emphasis: boolean
 }
 
-const Tag =({emphasis, typeFood}: Props)=>(
+const Tag =({emphasis, typeFood}: Props)=>{
+    const TypeFood = typeFood[0].toUpperCase() + typeFood.slice(1)
+    return (
     <TagContainer>
     {
         emphasis ? (
@@ -18,10 +20,11 @@ const Tag =({emphasis, typeFood}: Props)=>(
     }
     
     <TagType emphasis={emphasis} >
-        {typeFood}
+        {TypeFood}
     </TagType>
     
     </TagContainer>
 )
+}
 
 export  default Tag
