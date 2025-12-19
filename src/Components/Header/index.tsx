@@ -1,6 +1,9 @@
-import { HeaderContainer, Container, Hero, SubHeader, Content, FoodType, Title } from "./styles"
+import { HeaderContainer, Container, Hero, SubHeader, Content, FoodType, Title,BtnCart } from "./styles"
 import LogoHero from '../../Assets/image/logo.png'
 import { Link, useLocation } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import {open} from '../../store/reducers/cart'
+import { RootReducer } from "../../store"
 
 type Props = {
     name: string
@@ -12,6 +15,12 @@ const Header = ({name, type, image}: Props)=>{
     const location = useLocation()
     const home = location.pathname === '/'
     const TypeFood = type? type[0].toUpperCase() + type.slice(1) : ''
+    const dispatch = useDispatch()
+    const isOpen =  () =>{
+        dispatch(open())
+    }
+    const { items } = useSelector((state: RootReducer)=>state.cart)
+    const totalItems = items.length
 
     return(
     <>
@@ -25,7 +34,7 @@ const Header = ({name, type, image}: Props)=>{
                 <>
                     <Link to='/'>Restaurantes</Link>
                     <img src={LogoHero} alt=""/>
-                    <p>0 produto(s) no carrinho</p>
+                    <BtnCart onClick={isOpen}> {totalItems} produto(s) no carrinho</BtnCart>
                 </> }
             </Container>
         </HeaderContainer>

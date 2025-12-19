@@ -70,3 +70,12 @@ export const FoodType = styled.p`
 export const Title = styled.h3`
     font-weight: 900;
 `
+
+export const BtnCart =styled.button`
+    font-weight: 900;
+    border: none;
+    background-color: transparent;
+    color: #E66767;
+    font-size: 18px;
+    cursor: pointer;
+`
